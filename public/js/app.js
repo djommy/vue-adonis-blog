@@ -107,6 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'About'
 });
@@ -151,6 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -1395,6 +1397,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
+      _c("h2", { staticClass: "has-text-centered" }, [
+        _vm._v("Stuff about me noone wants to know :)")
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "columns" }, [
         _c("div", { staticClass: "column" }, [
           _vm._v(
@@ -1489,6 +1495,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
+      _c("h2", { staticClass: "has-text-centered" }, [
+        _vm._v("Welcome to my awesome project!")
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "columns" }, [
         _c("div", { staticClass: "column" }, [
           _vm._v("Lorem ipsum dolor sit amet.")
@@ -1540,7 +1550,28 @@ var render = function() {
         attrs: { role: "navigation", "aria-label": "main navigation" }
       },
       [
-        _vm._m(0),
+        _c(
+          "div",
+          { staticClass: "navbar-brand" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-item navbar-img", attrs: { to: "/" } },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "https://bulma.io/images/bulma-logo.png",
+                    width: "112",
+                    height: "28"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ],
+          1
+        ),
         _vm._v(" "),
         _c(
           "div",
@@ -1579,41 +1610,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-brand" }, [
-      _c(
-        "a",
-        { staticClass: "navbar-item", attrs: { href: "https://bulma.io" } },
-        [
-          _c("img", {
-            attrs: {
-              src: "https://bulma.io/images/bulma-logo.png",
-              width: "112",
-              height: "28"
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "navbar-burger burger",
-          attrs: {
-            role: "button",
-            "aria-label": "menu",
-            "aria-expanded": "false",
-            "data-target": "navbarBasicExample"
-          }
-        },
-        [
-          _c("span", { attrs: { "aria-hidden": "true" } }),
-          _vm._v(" "),
-          _c("span", { attrs: { "aria-hidden": "true" } }),
-          _vm._v(" "),
-          _c("span", { attrs: { "aria-hidden": "true" } })
-        ]
-      )
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "navbar-burger burger",
+        attrs: {
+          role: "button",
+          "aria-label": "menu",
+          "aria-expanded": "false",
+          "data-target": "navbarBasicExample"
+        }
+      },
+      [
+        _c("span", { attrs: { "aria-hidden": "true" } }),
+        _vm._v(" "),
+        _c("span", { attrs: { "aria-hidden": "true" } }),
+        _vm._v(" "),
+        _c("span", { attrs: { "aria-hidden": "true" } })
+      ]
+    )
   },
   function() {
     var _vm = this

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2 class="has-text-centered">Stuff about me noone wants to know :)</h2>
     <div class="columns">
       <div class="column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, nostrum maiores! Sequi.</div>
       <div class="column">Lorem, ipsum dolor.</div>

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2 class="has-text-centered">Welcome to my awesome project!</h2>
     <div class="columns">
       <div class="column">Lorem ipsum dolor sit amet.</div>
       <div class="column">Lorem, ipsum dolor.</div>
