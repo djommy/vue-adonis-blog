@@ -1,12 +1,19 @@
 import Vue from 'vue'
-import router from './router'
-import App from '@/components/layout/App'
+import Vuex from 'vuex'
+import VueRouter from 'vue-router'
 
-Vue.config.productionTip = false
+import router from '@/router'
+import store from '@/store'
+import App from '@/components/App'
+
+
+Vue.config.productionTip = true
+
+Vue.use(VueRouter)
 
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  store,
+  render: h => h(App)
 })

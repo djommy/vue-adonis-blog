@@ -6,7 +6,7 @@ let mix = require('laravel-mix');
 mix.setPublicPath('public')
   // transpiling, babelling, minifying and creating the public/js/main.js out of our assets
   .js('resources/assets/js/app.js', 'public/js')
-
+  .sass('resources/assets/sass/styles.scss', 'public/css/app.css')
 
 
 // aliases so instead of e.g. '../../components/test' we can import files like '@/components/test'

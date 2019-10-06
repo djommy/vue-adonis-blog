@@ -1,0 +1,13 @@
+body {
+  font-family: $primaryFont;
+  font-size: 16px;
+}
+
+.router-link-exact-active {
+  background: $blue;
+  color: $darkWhite;
+
+  // &:active {
+  //   @extend .router-link-exact-active;
+  // }
+}
