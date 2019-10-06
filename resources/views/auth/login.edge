@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register</title>
+  {{ style('/css/app.css') }}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    @if(flashMessage('successMessage'))
+      <div class="notification is-success">{{ flashMessage('successMessage') }}</div>
+    @elseif(flashMessage(errorMessage))
+    @endif
+    <div class="columns">
+      <div class="column is-4 is-offset-4">
+        <form action="{{route('login.store')}}" method="POST">
+          {{ csrfField() }}
+          <div class="field">
+            <label for="email" class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-success" name="email" type="text" placeholder="Email" value="{{ old('email', '') }}">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            @if(hasErrorFor('email'))
+              <p class="help is-danger">{{ getErrorFor('email') }}</p>
+            @endif
+          </div>
+
+          <div class="field">
+            <label for="password" class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+              <input name="password" class="input is-success" type="password" placeholder="Password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            @if(hasErrorFor('password'))
+              <p class="help is-danger">{{ getErrorFor('password') }}</p>
+            @endif
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link">Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

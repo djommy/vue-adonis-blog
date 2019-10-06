@@ -17,13 +17,27 @@
 const Route = use('Route')
 
 // all api routes
-Route.get('hello', () => {
-  return { greeting: 'Hello from the backend' };
-}).prefix('api')
-Route.post('post-example', () => {
-  return { greeting: 'Nice post!' };
-}).prefix('api')
+Route.group(() => {
+  Route.get('hello', () => {
+    return { greeting: 'Hello from the backend'};
+  })
+  Route.post('post-example', () => {
+    return { greeting: 'Nice post!' };
+  })
+})
+.prefix('api')
+.middleware('auth')
+
+// Auth routes
+Route.get('/register', 'RegisterController.create').as('register.create')
+Route.post('/register', 'RegisterController.store')
+  .as('register.store')
+  .validator('Register')
+
+Route.get('/login', 'LoginController.create').as('login.create')
+Route.post('/login', 'LoginController.store').as('login.store')
+Route.post('/logout', 'LoginController.destroy').as('logout')
 
 // This has to be the last route
 // Calls the view where Vue.js is rendered
-Route.any('*', ({ view }) => view.render('app'))
+Route.any('*', ({ view }) => view.render('app')).middleware('guest')
